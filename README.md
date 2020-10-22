@@ -1,7 +1,8 @@
 # Tecnologias usadas
 - Asp.NET core 3.1
-- Angular 9
 - Entity Framework Core
+- Angular 9
+- PrimeNG 10
 - Sql Server 2019
 
 # Como iniciar o projeto
