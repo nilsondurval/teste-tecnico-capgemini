@@ -35,7 +35,8 @@ export class ImportacaoListComponent implements OnInit {
       { field: 'dataEntrega', header: 'Data de Entrega', valueDisplayFn: i => moment(i.dataEntrega).format('DD/MM/YYYY') },
       { field: 'nomeProduto', header: 'Nome do Produto' },
       { field: 'quantidade', header: 'Quantidade' },
-      { field: 'valorUnitario', header: 'Valor Unitário', valueDisplayFn: i => moneyMask(i.valorUnitario) }
+      { field: 'valorUnitario', header: 'Valor Unitário', valueDisplayFn: i => moneyMask(i.valorUnitario) },
+      { field: 'valorTotal', header: 'Valor Total', valueDisplayFn: i => moneyMask(i.valorUnitario * i.quantidade) }
     ];
   }
 
