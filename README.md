@@ -16,4 +16,4 @@ Pronto o projeto está pronto para ser testado.
 
 - POST api/importacoes/upload : Faz o upload de uma planilha excel no formato especificado para o banco de dados
 - GET api/importacoes : Lista todos os registros persistidos
-- GET api/importacoes/{id} : Lista o registo do id {id}
+- GET api/importacoes/{id} : Lista o registro do id {id}
