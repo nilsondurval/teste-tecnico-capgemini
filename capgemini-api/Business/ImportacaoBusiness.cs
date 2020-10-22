@@ -89,9 +89,6 @@ namespace capgemini_api.Business
         }
       }
 
-      importacoes.RemoveAt(importacoes.Count() - 1);
-      importacoes.RemoveAt(importacoes.Count() - 1);
-
       return importacoes;
     }
 
