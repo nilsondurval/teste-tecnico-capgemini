@@ -1,0 +1,25 @@
+<div style="margin: 10px;">
+    <div style="margin-bottom: 30px;">
+        <p-panel header="Instruções">
+            Faça o upload da planilha com os dados: Data Entrega, Nome do Produto, Quantidade e Valor Unitário respectivamente e sem cabeçalhos.
+            Não deixe linhas em branco na planilha.
+            <br/>
+            <ul>
+                <li>Todos os campos são obrigatórios.</li>
+                <li>Campo data de entrega não pode ser menor ou igual que o dia atual.</li>
+                <li>Campo nome do produto tem tamanho máximo de 50 caráteres.</li>
+                <li>Campo quantidade tem que ser maior que zero.</li>
+                <li>Campo valor unitário deve ser maior que zero e suas casas decimais devem ser arredondadas matematicamente para duas casas decimais.</li>
+              </ul>
+        </p-panel>
+    </div>
+    
+    <div style="display: flex;">
+        <p-fileUpload #fileUpload mode="basic" name="importacoes" uploadLabel="Selecionar" url="" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" maxFileSize="1000000" (onSelect)="onSelect($event.files, fileUpload)" ></p-fileUpload>
+        <p-progressSpinner *ngIf="processing" [style]="{width: '30px', height: '30px'}" styleClass="custom-spinner" strokeWidth="8" fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
+    </div>
+    
+    <div style="margin-top: 15px;">
+        <app-importacao-list></app-importacao-list>
+    </div>
+</div>
