@@ -11,6 +11,10 @@ namespace capgemini_api.Models.Entitys
     [Column("id")]
     public long Id { get; set; }
 
+    [Column("dataImportacao")]
+    [Required]
+    public DateTime DataImportacao { get; set; }
+
     [Column("dataEntrega")]
     [Required]
     public DateTime DataEntrega { get; set; }

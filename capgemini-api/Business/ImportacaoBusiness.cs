@@ -113,11 +113,11 @@ namespace capgemini_api.Business
 
       importacoes = importacoesRaw.Select(i => new Importacao()
       {
+        DataImportacao = DateTime.Now,
         DataEntrega = Convert.ToDateTime(i.DataEntrega),
         NomeProduto = i.NomeProduto,
         Quantidade = Convert.ToInt32(i.Quantidade),
         ValorUnitario = Math.Round(Convert.ToDecimal(i.ValorUnitario), 2)
-
       }).ToList();
 
       return importacoes;

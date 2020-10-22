@@ -33,6 +33,7 @@ export class ImportacaoSingleComponent implements OnInit {
   setupCols(): void {
     this.cols = [
       { field: 'id', header: 'Codigo' },
+      { field: 'dataImportacao', header: 'Data de Importação', valueDisplayFn: i => moment(i.dataImportacao).format('DD/MM/YYYY') },
       { field: 'dataEntrega', header: 'Data de Entrega', valueDisplayFn: i => moment(i.dataEntrega).format('DD/MM/YYYY') },
       { field: 'nomeProduto', header: 'Nome do Produto' },
       { field: 'quantidade', header: 'Quantidade' },
