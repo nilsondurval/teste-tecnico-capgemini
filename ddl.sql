@@ -4,6 +4,7 @@ use bdImportacoes;
 
 create table Importacao (
 	id bigint identity(1, 1) not null,
+	dataImportacao date not null,
 	dataEntrega date not null,
 	nomeProduto varchar(50) not null,
 	quantidade int not null,
