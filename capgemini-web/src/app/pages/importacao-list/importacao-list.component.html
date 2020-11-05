@@ -1,5 +1,6 @@
 <div>
-    <p-table [columns]="cols" [value]="importacoes">
+    <p-table [columns]="cols" [value]="importacoes" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" 
+        currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros" [rowsPerPageOptions]="[10,25,50]">>
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <th *ngFor="let col of columns">
@@ -20,6 +21,12 @@
                 Nenhum registro encontrado.
               </td>
             </tr>
-          </ng-template>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+            <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+        </ng-template>
+        <ng-template pTemplate="paginatorright">
+            <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+        </ng-template>
     </p-table>
 </div>

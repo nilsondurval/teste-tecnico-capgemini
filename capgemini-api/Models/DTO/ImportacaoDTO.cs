@@ -1,4 +1,4 @@
-namespace capgemini_api.Models
+namespace capgemini_api.Models.DTO
 {
   public class ImportacaoDTO
   {

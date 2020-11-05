@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Importacao } from 'src/app/models/importacao.model';
 import { ImportacaoService } from 'src/app/services/importacao.service';
 import { handleErrorResponse } from 'src/app/shared/handle-error-response.function';
+import { moneyMask } from 'capgemini-web-lib';
 import * as moment from 'moment'
-import { moneyMask } from 'src/app/shared/money-mask.function';
 import { MessageService } from 'primeng/api';
 
 @Component({

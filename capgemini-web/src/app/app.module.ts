@@ -17,6 +17,7 @@ import { ImportacaoUploadComponent } from './pages/importacao-upload/importacao-
 import { MessageService } from 'primeng/api';
 import { ImportacaoSingleComponent } from './pages/importacao-single/importacao-single.component';
 import { ImportacaoListComponent } from './pages/importacao-list/importacao-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -29,10 +30,7 @@ import { ImportacaoListComponent } from './pages/importacao-list/importacao-list
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot([
-      { path: '', component: ImportacaoUploadComponent },
-      { path: 'importacao/:id', component: ImportacaoSingleComponent }
-    ]),
+    AppRoutingModule,
     PanelModule,
     FileUploadModule,
     ProgressSpinnerModule,

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using capgemini_api.Business.Base;
 using capgemini_api.Data;
-using capgemini_api.Models;
 using capgemini_api.Models.Classes;
+using capgemini_api.Models.DTO;
 using capgemini_api.Models.Entitys;
 using capgemini_api.Models.Enum;
 using ExcelDataReader;
@@ -15,6 +16,8 @@ namespace capgemini_api.Business
 {
   public class ImportacaoBusiness : IBusiness<Importacao>
   {
+    private readonly IMapper _mapper;
+    
     private readonly ImportacaoData _data;
 
     public ImportacaoBusiness(ImportacaoData data)
@@ -111,14 +114,7 @@ namespace capgemini_api.Business
         throw new BusinessException(erros);
       }
 
-      importacoes = importacoesRaw.Select(i => new Importacao()
-      {
-        DataImportacao = DateTime.Now,
-        DataEntrega = Convert.ToDateTime(i.DataEntrega),
-        NomeProduto = i.NomeProduto,
-        Quantidade = Convert.ToInt32(i.Quantidade),
-        ValorUnitario = Math.Round(Convert.ToDecimal(i.ValorUnitario), 2)
-      }).ToList();
+      importacoes = importacoesRaw.Select(i => _mapper.Map<Importacao>(i)).ToList();
 
       return importacoes;
     }

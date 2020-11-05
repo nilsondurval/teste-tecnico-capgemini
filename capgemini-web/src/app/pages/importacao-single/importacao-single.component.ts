@@ -3,9 +3,9 @@ import { Importacao } from 'src/app/models/importacao.model';
 import { ImportacaoService } from 'src/app/services/importacao.service';
 import { handleErrorResponse } from 'src/app/shared/handle-error-response.function';
 import * as moment from 'moment'
-import { moneyMask } from 'src/app/shared/money-mask.function';
 import { MessageService } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
+import { moneyMask } from 'capgemini-web-lib';
 
 @Component({
   selector: 'app-importacao-single',

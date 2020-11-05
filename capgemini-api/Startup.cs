@@ -1,8 +1,7 @@
-using capgemini_api.Business;
-using capgemini_api.Data;
+using AutoMapper;
+using capgemini_api.Application.AutoMapper;
 using capgemini_api.Data.DataContext;
-using capgemini_api.Services;
-using capgemini_api.Services.Interfaces;
+using capgemini_api.Infra;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +17,7 @@ namespace capgemini_api
         {
             Configuration = configuration;
         }
-
+        
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -40,10 +39,12 @@ namespace capgemini_api
                 builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
             }));
 
-            services.AddScoped<ImportacaoBusiness>();
-            services.AddScoped<ImportacaoData>();
+            var mapperConfig = AutoMapperConfig.RegisterMappings();
 
-            services.AddScoped<IMultipartFormDataService, MultipartFormDataService>();
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,6 +80,11 @@ namespace capgemini_api
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            NativeInjectorBootStrapper.RegisterServices(services);
         }
     }
 }
