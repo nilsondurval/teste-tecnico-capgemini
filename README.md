@@ -1,9 +1,11 @@
 # Tecnologias usadas
 - Asp.NET core 3.1
 - Entity Framework Core
+- AutoMapper 10.1.1
 - Angular 9
 - PrimeNG 10
 - Sql Server 2019
+- Verdaccio 4.8.1
 
 # Como iniciar o projeto
 - Passo 1: Abra o arquivo ddl.sql e execute no Sql Management Studio para criar a base de dados
