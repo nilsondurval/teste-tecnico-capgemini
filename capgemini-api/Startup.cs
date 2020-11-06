@@ -1,7 +1,7 @@
 using AutoMapper;
 using capgemini_api.Application.AutoMapper;
-using capgemini_api.Data.DataContext;
-using capgemini_api.Infra;
+using capgemini_api.Infra.Data.Context;
+using GestaoDocumentosApi.Infra;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

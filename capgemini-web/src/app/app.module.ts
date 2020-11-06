@@ -18,6 +18,7 @@ import { MessageService } from 'primeng/api';
 import { ImportacaoSingleComponent } from './pages/importacao-single/importacao-single.component';
 import { ImportacaoListComponent } from './pages/importacao-list/importacao-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormDataService } from './services/form-data.service';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   providers: [
     ImportacaoService,
+    FormDataService,
     MessageService
   ],
   bootstrap: [AppComponent]

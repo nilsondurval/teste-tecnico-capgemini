@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Importacao } from '../models/importacao.model';
+import { FormDataService } from './form-data.service';
 
 @Injectable()
 export class ImportacaoService {
@@ -11,12 +12,11 @@ export class ImportacaoService {
 
   constructor(
     private httpClient: HttpClient,
+    private formDataService: FormDataService
   ) { }
 
   upload(excel: File) {
-    const formData = new FormData();
-    formData.append(excel.name, excel, excel.name);
-
+    const formData = this.formDataService.createFormData<any>({}, 'importacoes', [ excel ]);
     return this.httpClient.post(`${environment.api}/importacoes/upload`, formData);
   }
 

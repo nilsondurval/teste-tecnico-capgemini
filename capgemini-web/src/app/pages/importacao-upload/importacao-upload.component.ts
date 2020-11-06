@@ -31,7 +31,7 @@ export class ImportacaoUploadComponent implements OnInit {
     this.importacaoService.upload(file[0]).subscribe(_ => {
       fileUpload.clear();
       this.importacaoListComponent.getImportacoes();
-      this.messageService.add({ severity: 'sucess', summary: 'Sucesso!', detail: "Arquivos persistidos com sucesso", sticky: true });
+      this.messageService.add({ severity: 'sucess', summary: 'Sucesso!', detail: "Arquivo persistido com sucesso", sticky: true });
       this.processing = false;
     },
     errorResponse => {

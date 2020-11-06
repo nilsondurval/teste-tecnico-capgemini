@@ -1,4 +1,5 @@
 export enum ErroEnum {
-    SUCCESS = 1,
-    ERROR = 2
+    ERROR = 1,
+    WARNING = 2,
+    INFO = 3
 }
